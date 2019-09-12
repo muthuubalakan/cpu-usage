@@ -1,6 +1,7 @@
 #include <iostream>
-#include "fileread.h"
 #include <string>
+#include "fileread.h"
+#include "parser.h"
 // #include "logging.h"
 
 
@@ -18,9 +19,10 @@ int main(){
 	string* cpu;
 
 	StatReader sreader;
+	StrParser parser;
 	cpu = sreader.read_line();
 	for (int i = 0; i < sizeof(cpu) + 1; i++){
-	     cout << cpu[i]<< endl;
+	     parser.split_line(cpu[i]);
 	}
 
 }
